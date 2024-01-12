@@ -10,7 +10,7 @@
 
 		opp-670000000 {
 			opp-hz = /bits/ 64 <670000000>;
-			opp-microvolt = <208>;
+			opp-microvolt = <228>;
 		};
 
 		opp-587000000 {
