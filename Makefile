@@ -530,6 +530,11 @@ RETPOLINE_VDSO_CFLAGS := $(call cc-option,$(RETPOLINE_VDSO_CFLAGS_GCC),$(call cc
 export RETPOLINE_CFLAGS
 export RETPOLINE_VDSO_CFLAGS
 
+KBUILD_CFLAGS += -mllvm -polly \
+				-mllvm -polly-run-inliner \
+				-mllvm -polly-run-dce \
+				-mllvm -polly-vectorizer=stripmine
+
 KBUILD_CFLAGS	+= $(call cc-option,-fno-PIE)
 KBUILD_AFLAGS	+= $(call cc-option,-fno-PIE)
 
