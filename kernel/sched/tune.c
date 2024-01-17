@@ -732,6 +732,9 @@ boost_write(struct cgroup_subsys_state *css, struct cftype *cft,
 	
 	if (!strcmp(css->cgroup->kn->name, "top-app"))
 		boost = 1;
+		
+        if (!strcmp(css->cgroup->kn->name, "foreground"))
+		boost = 25;
 
 	if (boost < -100 || boost > 100)
 		return -EINVAL;
