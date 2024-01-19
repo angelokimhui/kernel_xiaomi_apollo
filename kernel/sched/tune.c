@@ -141,14 +141,14 @@ static inline struct schedtune *parent_st(struct schedtune *st)
  */
 static struct schedtune
 root_schedtune = {
-	.boost	= 0,
+	.boost	= 15,
 #ifdef CONFIG_SCHED_WALT
-	.sched_boost_no_override = false,
+	.sched_boost_no_override = true,
 	.sched_boost_enabled = true,
 	.colocate = false,
 	.colocate_update_disabled = false,
 #endif
-	.prefer_idle = 0,
+	.prefer_idle = 1,
 };
 
 /*
